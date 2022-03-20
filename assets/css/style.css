@@ -22,6 +22,10 @@ body {
     padding: 15px 30px;
 }
 
+.start_button button:hover {
+    background-color: #278197;
+}
+
 /* QUESTION CARDS [includes header info with time, questions, and next buttone] */
 .quiz-card {
     background: white;
@@ -46,31 +50,33 @@ body {
 
 .quiz-card header .title {
     color: white;
-    font-family: didot, serif;
-    font-size: 25px;
+    font-family: monospace;
+    font-size: 38px;
     font-weight: 500;
 }
 
 .quiz-card header .timer {
-    color: #33a8c5;
+    color: #278197;
     background: white;
-    font-family: didot, serif;
+    font-family: monospace;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 40px;
-    width: 200px;
+    width: 175px;
     border-radius: 5px;
     padding: 4px 7px;
 }
 
 .quiz-card header .timer .time-left {
-    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
     font-weight: 300;
     color: #33a8c5;
 }
 
 .quiz-card header .timer .sec {
+    color: #585Ce1;
     font-size: 21px;
     font-weight: 700;
 
@@ -94,10 +100,43 @@ body {
 }
 
 section .ABCD .option {
-    background-color: #e8ffff;
+    background-color: #f0ffff;
+    color: #216a7c; 
+    padding: 4px 7px;
     border: 1px solid #B7EEF0;
     border-radius: 5px;
     display: flex;
     align-items: center;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+
+section .ABCD .option:hover {
+    background: #33a8c5;
+    color: white;
+}
+
+/*CONTINUE BUTTON*/
+.quiz-card footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+footer .next-button {
+    font-size: 20px;
+    background: #33a8c5;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+footer .next-button:hover {
+    background-color: #585Ce1;
 }
