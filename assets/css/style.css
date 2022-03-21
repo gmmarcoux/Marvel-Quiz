@@ -28,6 +28,9 @@ body {
 
 /* QUESTION CARDS [includes header info with time, questions, and next buttone] */
 .quiz-card {
+    /*REMEMBER TO DELETE THIS*/
+    display: none;
+     /*REMEMBER TO DELETE THIS*/
     background: white;
     position: absolute;
     top: 50%;
@@ -139,4 +142,38 @@ footer .next-button {
 
 footer .next-button:hover {
     background-color: #585Ce1;
+}
+
+/*END PAGE*/
+.results {
+    margin: auto;
+    width: 50%;
+    padding: 50px 100px;
+    text-align: center;
+    border: 1px solid #278197;
+    background: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.finished {
+    font-size: 25px;
+    color:#585Ce1;
+}
+
+.results .score {
+    border: 1px solid #216a7c;
+    border-radius: 5px;
+    background-color: #e2feff;
+    color: #1a505e;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    padding: 20px 40px;
+}
+
+.results section .restart {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
 }
