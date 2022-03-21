@@ -14,38 +14,38 @@
    <div class="start_button"><button>Start Quiz</button></div>
 
    <!--Quiz card-->
-   <div class="quiz-card">
+   <div class="quiz_card">
         <header>
             <div class="title">Marvel Quiz</div>
             <div class="timer">
-                <div class="time-left">Time Remaining :</div>
-                <div class="sec">60</div>
+                <div class="time_left">Time Remaining :</div>
+                <div id="countdown" class="sec">60</div>
             </div>
         </header>
 
         <section>
             <!--Q1-->
-            <div class="q-text">
-                <span>How many Infinity Stones are there?</span>
+            <div class="q_text">
+                <span id="question">A Question?</span>
             </div>
             <div class="ABCD">
-                <div class="option">
-                    <span>6</span>
+                <div id= choices class="option">
+                    <button id="answer1" value="0" type="button">1</button>
                 </div>
                 <div class="option">
-                    <span>5</span>
+                    <button id="answer2" value="0" type="button">2</button>
                 </div>
                 <div class="option">
-                    <span>4</span>
+                    <button id="answer3" value="0" type="button">3</button>
                 </div>
                 <div class="option">
-                    <span>7</span>
+                    <button id="answer4" value="0" type="button">4</button>
                 </div>
             </div>
         </section>
 
         <footer>
-            <button class="next-button">Continue</button>
+            <button id="next" class="next_button">Continue</button>
         </footer>
     </div>
 
@@ -56,31 +56,30 @@
         </div>
 
         <div class="score">
-            <span class="score-text">Your Score : <p>1</p> out of <p>20</p></span>
+            <span>Your Score : <p>1</p> out of <p>20</p></span>
         </div>
         
-        <section class="restart">
-            <div class="restart-text">
-                <p class="replay-q">Want to try again?</p>
+        <div class="restart">
+            <div class="restart_text">
+                <p>Want to try again?</p>
             </div>
-            <div class="restart-btn">
-                <button class="replay-btn">Restart Quiz</button>
+            <div class="restart_btn">
+                <button class="replay_btn">Restart Quiz</button>
             </div>
-        </section>
+        </div>
 
         <br/>
 
-        <section class="scores">
+        <div class="scoreS">
             <input type="text" name="task-name" placeholder="Enter your Initials and Compare your Scores!"/>
-            <button class="initials-select">Confirm</button>
+            <button class="initials_select">Confirm</button>
             
             <br/>
-            
-            <div class="past-scores">
-                Placeholder
-            </div>
-            
-        </section>
+        </div>
+
+        <div class="past_scores">
+            Placeholder
+        </div>
 
     </div>
 
