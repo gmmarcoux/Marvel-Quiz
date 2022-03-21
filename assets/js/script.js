@@ -3,14 +3,31 @@ const startbutton = document.querySelector("#begin");
 const quizcard = document.querySelector("#quiz_container");
 const question = document.getElementById(".question");
 const choices = document.getElementById(".choices");
-const timer = document.getElementById(".countdown");
 const next = document.document.querySelector("#next");
 const finalpage = document.getElementById(".results");
 const score = document.getElementById(".score");
+var time;
 
-let timer = 90;
-let runningTimer;
 let score = 0;
+
+//start
+function hideCards() {
+    quizcard.setAttribute("hidden", true);
+    finalpage.setAttribute("hidden", true);
+}
+
+document.querySelector("#start-button").addEventListener("click", startQuiz);
+function startQuiz() {
+    hideCards();
+    quizcard.removeAttribute("hidden");
+}
+
+//timer
+const timer = document.getElementById(".countdown");
+function timer () {
+    timer.textContent = time;
+}
+
 
 
 //questions 
@@ -117,6 +134,13 @@ const questions = [
     },
 ]; 
 
+var current;
+function question() {
+    let question = questions[current];
+
+}
+
+//scores
 var formEl = document.querySelector("#task_form"); 
 var InitialsListed = document.querySelector("#previous");
 
