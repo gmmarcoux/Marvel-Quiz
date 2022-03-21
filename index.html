@@ -11,10 +11,10 @@
 
 <body>
    <!--Start quiz button-->
-   <div class="start_button"><button>Start Quiz</button></div>
+   <div id="Begin" class="start_button"><button onclick="startTime()">Start Quiz</button></div>
 
    <!--Quiz card-->
-   <div class="quiz_card">
+   <div id="quiz_contrainer" class="quiz_card">
         <header>
             <div class="title">Marvel Quiz</div>
             <div class="timer">
@@ -71,20 +71,23 @@
         <br/>
 
         <div class="scoreS">
-            <input type="text" name="task-name" placeholder="Enter your Initials and Compare your Scores!"/>
-            <button class="initials_select">Confirm</button>
+            <form id="task_form">
+             <input type="text" name="task-name" placeholder="Enter your Initials and Compare your Scores!"/>
+             <button class="initials_select">Confirm</button>
+        </form>
             
             <br/>
         </div>
 
         <div class="past_scores">
-            Placeholder
+            <ul class="initials_list" id="previous"></ul>
         </div>
 
     </div>
 
     <!--JS link-->
     <script src="./assets.js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

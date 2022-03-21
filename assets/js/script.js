@@ -1,20 +1,16 @@
-//vars
-const startbutton = document.getElementById(".start_button button");
-const quizcard = document.querySelector(".quiz_card");
+//DOM
+const startbutton = document.querySelector("#begin");
+const quizcard = document.querySelector("#quiz_container");
 const question = document.getElementById(".question");
 const choices = document.getElementById(".choices");
 const timer = document.getElementById(".countdown");
-const next = document.getElementById(".next");
+const next = document.document.querySelector("#next");
+const finalpage = document.getElementById(".results");
+const score = document.getElementById(".score");
 
-
-//start
-startbutton.addEventListener("click", function() {
-    var timeleft = 60;
-}
- 
-}
-
-
+let timer = 90;
+let runningTimer;
+let score = 0;
 
 
 //questions 
@@ -119,6 +115,29 @@ const questions = [
         choices: ["a. Adamantium", "b. Vibranium", "c. Mithril", "d. Saronite"],
         answer: "a. Adamantium"
     },
-];
+]; 
 
+var formEl = document.querySelector("#task_form"); 
+var InitialsListed = document.querySelector("#previous");
+
+var createTaskHandler = function(event) {
+    event.preventDefault();
+    var taskNameInput = document.querySelector("input[name='task-name']").value;
+    var taskTypeInput = document.querySelector("select[name='task-type']").value;
+
+
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "task-item";
+
+    var InitialsInfoEl = document.createElement("div");
+    InitialsInfoEl.className = "task-info";
+
+    listItemEl.textContent = "Initials";
+    InitialsListed.appendChild(listItemEl);
+    console.log(event);
+
+    var InitialsInput = document.querySelector("input[name='task-name']");
+    console.dir(InitialsInput);
+};
+formEl.addEventListener("submit", createTaskHandler);
 
