@@ -181,7 +181,7 @@ footer .next_button:hover {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.results .restart {
+/* .results .restart {
     margin-top: 25px;
     align-items: center;
     justify-content: space-between;
@@ -208,7 +208,7 @@ footer .next_button:hover {
 
 .results .restart button:hover {
     background-color: #585Ce1;
-}
+} */
 
 .results .scoreS {
     align-items: center;
