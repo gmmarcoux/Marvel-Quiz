@@ -19,7 +19,7 @@
             <div class="title">Marvel Quiz</div>
             <div class="timer">
                 <div class="time_left">Time Remaining :</div>
-                <div id="countdown"><span class="sec">60</span></div>
+                <div id="countdown"><span class="sec">120</span></div>
             </div>
         </header>
 
@@ -34,44 +34,36 @@
         </section>
 
         <footer>
-            <button id="next" class="next_button">Continue</button>
+            <button id="next" class="next_button">Results!</button>
         </footer>
     </div>
 
     <!--Results-->
     <div class="results hidden">
-        <div class="finished"> 
-         <p>That's it! Let's see how you did...</p>
-        </div>
-
-        <div class="score">
-            <span>Your Score : <p>1</p> out of <p>20</p></span>
-        </div>
-        
-        <div class="restart">
-            <div class="restart_text">
-                <p>Want to try again?</p>
+        <div class="borderboxresults">
+            <div class="finished"> 
+            <p>That's it! Let's see how you did...</p>
             </div>
-            <div class="restart_btn">
-                <button class="replay_btn">Restart Quiz</button>
+
+            <div class="score">
+                <span>Your Score : <p>1</p> out of <p>20</p></span>
             </div>
-        </div>
-
-        <br/>
-
-        <div class="scoreS">
-            <form id="task_form">
-             <input type="text" name="task-name" placeholder="Enter your Initials and Compare your Scores!"/>
-             <button class="initials_select">Confirm</button>
-        </form>
             
             <br/>
-        </div>
 
-        <div class="past_scores">
-            <ul class="initials_list" id="previous"></ul>
-        </div>
+            <div class="scoreS">
+                <form id="task_form">
+                <input type="text" name="task-name" placeholder="Enter your Initials and Compare your Scores!"/>
+                <button class="initials_select">Confirm</button>
+            </form>
+                
+                <br/>
+            </div>
 
+            <div class="past_scores">
+                <ul class="initials_list" id="previous"></ul>
+            </div>
+        </div>
     </div>
 
     <!--JS link-->
