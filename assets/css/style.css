@@ -2,6 +2,9 @@ body {
     background: #B7EEF0; 
 }
 
+.hidden {
+    display: none;
+}
 
 .quiz_card.activeQuiz {
     pointer-events: auto;
@@ -82,7 +85,7 @@ body {
     color: #33a8c5;
 }
 
-.quiz_card header .timer .sec {
+.quiz_card header .timer span .sec {
     color: #585Ce1;
     font-size: 21px;
     font-weight: 700;
@@ -106,7 +109,7 @@ body {
     margin-top: 20px;
 }
 
-section .ABCD .option button{
+section .ABCD .option {
     background-color: #f0ffff;
     color: #216a7c; 
     padding: 4px 7px;
@@ -118,7 +121,7 @@ section .ABCD .option button{
     cursor: pointer;
 }
 
-section .ABCD .option button:hover {
+section .ABCD .option:hover {
     background: #33a8c5;
     color: white;
 }

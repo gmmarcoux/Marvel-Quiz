@@ -1,34 +1,69 @@
 //DOM
 const startbutton = document.querySelector("#begin");
 const quizcard = document.querySelector("#quiz_container");
-const question = document.getElementById(".question");
-const choices = document.getElementById(".choices");
-const next = document.document.querySelector("#next");
-const finalpage = document.getElementById(".results");
-const score = document.getElementById(".score");
-var time;
-
-let score = 0;
+const question = document.getElementById("question");
+const choices = document.getElementById("choices");
+const next = document.querySelector("#next");
+const finalpage = document.getElementById("results");
+const score = document.getElementById("score");
+let questionchoices = document.querySelector(".ABCD");
+let timeleft = 60;
+let timestate;
+var current = 0; 
 
 //start
-function hideCards() {
-    quizcard.setAttribute("hidden", true);
-    finalpage.setAttribute("hidden", true);
-}
-
-document.querySelector("#start-button").addEventListener("click", startQuiz);
+document.querySelector(".start_button").addEventListener("click", startQuiz);
 function startQuiz() {
-    hideCards();
-    quizcard.removeAttribute("hidden");
+    quizcard.removeAttribute("class");
+    timestate = setInterval(timerdecrement, 1000);
+    displayquestions ();
 }
 
 //timer
-const timer = document.getElementById(".countdown");
-function timer () {
-    timer.textContent = time;
+const timer = document.getElementById("countdown");
+function timerdecrement () {
+    timeleft -- 
+    timer.textContent = timeleft;
+    if (timeleft <= 0) {
+        clearInterval(timestate);
+        finalpage.removeAttribute("class", "hidden");
+    }
 }
 
+function displayquestions () {
+    let questionsindex = questions[current];
+    question.textContent = questionsindex.question;
+    questionchoices.innerHTML = "";
+    questionsindex.choices.forEach (function (choice) {
+        let answerbutton = document.createElement ("button");
+        answerbutton.setAttribute ("class", "option");
+        answerbutton.setAttribute ("value", choice);
+        answerbutton.textContent = choice; 
+        answerbutton.onclick = checkanswer;
+        questionchoices.appendChild (answerbutton);
 
+
+    })
+}
+
+function checkanswer () {
+    if (this.value === questions[current].answer) {
+        console.log("correct");
+    }
+    else {
+        console.log("incorrect");
+        timeleft = timeleft - 10;
+        timer.textContent = timeleft;
+    }
+    current ++;
+    if (current === questions.length) {
+        //call quiz end function
+    }
+    else {
+        displayquestions ();
+    }
+
+}
 
 //questions 
 const questions = [
@@ -43,12 +78,12 @@ const questions = [
         answer: "c. Strategic Homeland Intervention, Enforcement, and Logistics"
     },
     {
-        question: "What is Doctor Strange’s medical specialty before he loses his ability to use his hands?",
+        question: "What is Doctor Strange/’s medical specialty before he loses his ability to use his hands?",
         choices: ["a. Cardiac Surgeon", "b. Neurosurgeon", "c. Psychiatry", "d. General Surgeon"],
         answer: "b. Neurosurgeon"
     },
     {
-        question: "Who was responsible for the death of King T’Chaka’s death in the bombing of the Accords?",
+        question: "Who was responsible for the death of King T/’Chaka/’s death in the bombing of the Accords?",
         choices: ["a. Red Skull", "b. Zemo", "c. White Wolf", "d. Steve Rogers"],
         answer: "b. Zemo"
     },
@@ -73,12 +108,12 @@ const questions = [
         answer: "a. Left"
     },
     {
-        question: "What is the name of Thor’s hammer?",
+        question: "What is the name of Thor/’s hammer?",
         choices: ["a. Odinsword", "b. Mjolnir", "c. Jarnbjorn", "d. Uru Destroyer"],
         answer: "b. Mjolnir"
     },
     {
-        question: "Before Mark Ruffalo’s appearance as the Hulk in “The Avengers (2012),” who originally played Hulk in “The Incredible Hulk (2008)?”",
+        question: "Before Mark Ruffalo/’s appearance as the Hulk in “The Avengers (2012),” who originally played Hulk in “The Incredible Hulk (2008)?”",
         choices: ["a. Lou Ferrigno", "b. Christian Bale", "c. Brandon Routh", "d. Edward Norton"],
         answer: "d. Edward Norton"
     },
@@ -88,7 +123,7 @@ const questions = [
         answer: "b. The Stork Club"
     },
     {
-        question: "Who is the founder of SHIELD’s sister agency, SWORD?",
+        question: "Who is the founder of SHIELD/’s sister agency, SWORD?",
         choices: ["a. Monica Rambeau", "b. Nick Fury", "c. Maria Rambeau", "d. Phil Coulson"],
         answer: "c. Maria Rambaeu"
     },
@@ -108,12 +143,12 @@ const questions = [
         answer: "d. Avengers: Endgame"
     },
     {
-        question: "At the end of Captain Marvel, Nick Fury gets scratched across his eye by a creature named (in the cinematic universe) Goose. What race of aliens, that closely resembles Earth’s cats, resulted in SHIELDs’ head director’s signature eye patch?",
+        question: "At the end of Captain Marvel, Nick Fury gets scratched across his eye by a creature named (in the cinematic universe) Goose. What race of aliens, that closely resembles Earth/’s cats, resulted in SHIELDs/’ head director/’s signature eye patch?",
         choices: ["a. Deviant", "b. Skrull", "c. Flerken", "d. Kree"],
         answer: "b. Flerken"
     },
     {
-        question: "What is the pseudonym Natasha Romanoff uses when she goes undercover as Tony Stark’s new assistant?",
+        question: "What is the pseudonym Natasha Romanoff uses when she goes undercover as Tony Stark/’s new assistant?",
         choices: ["a. Natasha Rushman", "b. Nicky Rome", "c. Sierra River", "d. Nat Gilmore"],
         answer: "a. Natasha Rushman"
     },
@@ -128,17 +163,12 @@ const questions = [
         answer: "c. Avengers: Endgame"
     },
     {
-        question: "What is the metal that Wolverine’s claws are coated in?",
+        question: "What is the metal that Wolverine/’s claws are coated in?",
         choices: ["a. Adamantium", "b. Vibranium", "c. Mithril", "d. Saronite"],
         answer: "a. Adamantium"
     },
 ]; 
 
-var current;
-function question() {
-    let question = questions[current];
-
-}
 
 //scores
 var formEl = document.querySelector("#task_form"); 

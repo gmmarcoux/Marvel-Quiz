@@ -11,36 +11,28 @@
 
 <body>
    <!--Start quiz button-->
-   <div id="Begin" class="start_button"><button onclick="startTime()">Start Quiz</button></div>
+   <div id="Begin" class="start_button"><button>Start Quiz</button></div>
 
    <!--Quiz card-->
-   <div id="quiz_contrainer" class="quiz_card">
+   <div class="quiz_card">
         <header>
             <div class="title">Marvel Quiz</div>
             <div class="timer">
                 <div class="time_left">Time Remaining :</div>
-                <div id="countdown" class="sec">60</div>
+                <div id="countdown"><span class="sec">60</span></div>
             </div>
         </header>
 
-        <section>
+        <section id="quiz_container" class="hidden">
             <!--Q1-->
             <div class="q_text">
                 <span id="question">A Question?</span>
             </div>
             <div class="ABCD">
-                <div id= choices class="option">
-                    <button id="answer1" value="0" type="button">1</button>
-                </div>
-                <div class="option">
-                    <button id="answer2" value="0" type="button">2</button>
-                </div>
-                <div class="option">
-                    <button id="answer3" value="0" type="button">3</button>
-                </div>
-                <div class="option">
+                
+                <!-- <div class="option">
                     <button id="answer4" value="0" type="button">4</button>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -50,7 +42,7 @@
     </div>
 
     <!--Results-->
-    <div class="results">
+    <div class="results hidden">
         <div class="finished"> 
          <p>That's it! Let's see how you did...</p>
         </div>
